@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html
+      PUBLIC "-//W3C//DTD HTML 4.01//EN"
+      "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-US">
+<head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon"
+          type="image/png"
+          href="/images/favicon.png">
+    <title>Bitfinex - Coinsight.org</title>
+    <style type="text/css">
+		@import "/assets/v1503260787/css/jquery-ui.min.css";
+		@import "/assets/v1503260787/css/coinsight.css";
+    </style>
+
+    <script src="https://www.google.com/jsapi"></script>
+	<script src="/assets/v1503260787/js/coinsight.min.js"></script>
+
+
+
+</head>
+
+
+<body>
+
+    <h1 class="header"><a href="/"><img src="/images/coinsight-web-logo.png" alt="Coinsight.org" id="logo" /></a></h1>
+    <div style="clear:both;"></div>
+
+<div class="ui-tabs ui-widget">
+<ul role="tablist" class="tabs-smaller ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header">
+
+    <li class="nav-dropdown ui-state-default ui-corner-top">
+        <a class="nav-inactive-link">Reddit</a>
+        <div class="nav-dropdown-content">    <a class="nav-dropdown-link" href="/flairgame">Flair Game</a><br>    <a class="nav-dropdown-link" href="/flaircounts">Flair Counts</a><br>    <a class="nav-dropdown-link" href="/subredditstats">Subreddit Stats</a><br>        </div>
+    </li>    <li class="nav-dropdown ui-state-default ui-corner-top">
+        <a class="nav-inactive-link">Depth Sums</a>
+        <div class="nav-dropdown-content">    <a class="nav-dropdown-link" href="/bitstamp">Bitstamp</a><br>    <a class="nav-dropdown-link" href="/gdax">GDAX</a><br>    <a class="nav-dropdown-link" href="/itbit">itBit</a><br>    <a class="nav-dropdown-link" href="/gemini">Gemini</a><br>    <a class="nav-dropdown-link" href="/bitfinex">Bitfinex</a><br>        </div>
+    </li>
+</ul>
+<div style="clear:both;"></div>
+<div id="content" class="graphs ui-tabs-panel ui-widget-content ui-corner-bottom">
+
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-btcusd-depth" src="/graphs/bitfinex_btcusd_depth_7d.png" alt="bitfinex btcusd depth" />
+<a href="#" onclick="$('#bitfinex-btcusd-depth').attr('src', '/graphs/bitfinex_btcusd_depth.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth').attr('src', '/graphs/bitfinex_btcusd_depth_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth').attr('src', '/graphs/bitfinex_btcusd_depth_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth').attr('src', '/graphs/bitfinex_btcusd_depth_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth').attr('src', '/graphs/bitfinex_btcusd_depth_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-btcusd-depth-ratios" src="/graphs/bitfinex_btcusd_depth_ratios_7d.png" alt="bitfinex btcusd depth ratios" />
+<a href="#" onclick="$('#bitfinex-btcusd-depth-ratios').attr('src', '/graphs/bitfinex_btcusd_depth_ratios.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth-ratios').attr('src', '/graphs/bitfinex_btcusd_depth_ratios_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth-ratios').attr('src', '/graphs/bitfinex_btcusd_depth_ratios_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth-ratios').attr('src', '/graphs/bitfinex_btcusd_depth_ratios_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-btcusd-depth-ratios').attr('src', '/graphs/bitfinex_btcusd_depth_ratios_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ethusd-depth" src="/graphs/bitfinex_ethusd_depth_7d.png" alt="bitfinex ethusd depth" />
+<a href="#" onclick="$('#bitfinex-ethusd-depth').attr('src', '/graphs/bitfinex_ethusd_depth.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth').attr('src', '/graphs/bitfinex_ethusd_depth_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth').attr('src', '/graphs/bitfinex_ethusd_depth_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth').attr('src', '/graphs/bitfinex_ethusd_depth_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth').attr('src', '/graphs/bitfinex_ethusd_depth_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ethusd-depth-ratios" src="/graphs/bitfinex_ethusd_depth_ratios_7d.png" alt="bitfinex ethusd depth ratios" />
+<a href="#" onclick="$('#bitfinex-ethusd-depth-ratios').attr('src', '/graphs/bitfinex_ethusd_depth_ratios.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth-ratios').attr('src', '/graphs/bitfinex_ethusd_depth_ratios_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth-ratios').attr('src', '/graphs/bitfinex_ethusd_depth_ratios_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth-ratios').attr('src', '/graphs/bitfinex_ethusd_depth_ratios_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethusd-depth-ratios').attr('src', '/graphs/bitfinex_ethusd_depth_ratios_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ethbtc-depth" src="/graphs/bitfinex_ethbtc_depth_7d.png" alt="bitfinex ethbtc depth" />
+<a href="#" onclick="$('#bitfinex-ethbtc-depth').attr('src', '/graphs/bitfinex_ethbtc_depth.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth').attr('src', '/graphs/bitfinex_ethbtc_depth_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth').attr('src', '/graphs/bitfinex_ethbtc_depth_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth').attr('src', '/graphs/bitfinex_ethbtc_depth_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth').attr('src', '/graphs/bitfinex_ethbtc_depth_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ethbtc-depth-ratios" src="/graphs/bitfinex_ethbtc_depth_ratios_7d.png" alt="bitfinex ethbtc depth ratios" />
+<a href="#" onclick="$('#bitfinex-ethbtc-depth-ratios').attr('src', '/graphs/bitfinex_ethbtc_depth_ratios.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth-ratios').attr('src', '/graphs/bitfinex_ethbtc_depth_ratios_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth-ratios').attr('src', '/graphs/bitfinex_ethbtc_depth_ratios_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth-ratios').attr('src', '/graphs/bitfinex_ethbtc_depth_ratios_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ethbtc-depth-ratios').attr('src', '/graphs/bitfinex_ethbtc_depth_ratios_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ltcusd-depth" src="/graphs/bitfinex_ltcusd_depth_7d.png" alt="bitfinex ltcusd depth" />
+<a href="#" onclick="$('#bitfinex-ltcusd-depth').attr('src', '/graphs/bitfinex_ltcusd_depth.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth').attr('src', '/graphs/bitfinex_ltcusd_depth_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth').attr('src', '/graphs/bitfinex_ltcusd_depth_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth').attr('src', '/graphs/bitfinex_ltcusd_depth_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth').attr('src', '/graphs/bitfinex_ltcusd_depth_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ltcusd-depth-ratios" src="/graphs/bitfinex_ltcusd_depth_ratios_7d.png" alt="bitfinex ltcusd depth ratios" />
+<a href="#" onclick="$('#bitfinex-ltcusd-depth-ratios').attr('src', '/graphs/bitfinex_ltcusd_depth_ratios.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth-ratios').attr('src', '/graphs/bitfinex_ltcusd_depth_ratios_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth-ratios').attr('src', '/graphs/bitfinex_ltcusd_depth_ratios_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth-ratios').attr('src', '/graphs/bitfinex_ltcusd_depth_ratios_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcusd-depth-ratios').attr('src', '/graphs/bitfinex_ltcusd_depth_ratios_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ltcbtc-depth" src="/graphs/bitfinex_ltcbtc_depth_7d.png" alt="bitfinex ltcbtc depth" />
+<a href="#" onclick="$('#bitfinex-ltcbtc-depth').attr('src', '/graphs/bitfinex_ltcbtc_depth.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth').attr('src', '/graphs/bitfinex_ltcbtc_depth_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth').attr('src', '/graphs/bitfinex_ltcbtc_depth_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth').attr('src', '/graphs/bitfinex_ltcbtc_depth_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth').attr('src', '/graphs/bitfinex_ltcbtc_depth_2d.png'); return false;">2d</a>
+    </div>
+<div class="half-chart" style="width:49.5%;">
+    <img id="bitfinex-ltcbtc-depth-ratios" src="/graphs/bitfinex_ltcbtc_depth_ratios_7d.png" alt="bitfinex ltcbtc depth ratios" />
+<a href="#" onclick="$('#bitfinex-ltcbtc-depth-ratios').attr('src', '/graphs/bitfinex_ltcbtc_depth_ratios.png'); return false;">All</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth-ratios').attr('src', '/graphs/bitfinex_ltcbtc_depth_ratios_6m.png'); return false;">6m</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth-ratios').attr('src', '/graphs/bitfinex_ltcbtc_depth_ratios_30d.png'); return false;">30d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth-ratios').attr('src', '/graphs/bitfinex_ltcbtc_depth_ratios_7d.png'); return false;">7d</a>
+    &middot; <a href="#" onclick="$('#bitfinex-ltcbtc-depth-ratios').attr('src', '/graphs/bitfinex_ltcbtc_depth_ratios_2d.png'); return false;">2d</a>
+    </div>
+    <div style="clear:both;"> </div></div></div>
+
+    <div style="clear:both;"></div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91561812-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</html>

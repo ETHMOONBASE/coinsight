@@ -1,0 +1,222 @@
+
+
+<!DOCTYPE html
+      PUBLIC "-//W3C//DTD HTML 4.01//EN"
+      "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-US">
+<head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon"
+          type="image/png"
+          href="/images/favicon.png">
+    <title>Flair Game - Coinsight.org</title>
+    <style type="text/css">
+		@import "/assets/v1503260787/css/jquery-ui.min.css";
+		@import "/assets/v1503260787/css/coinsight.css";
+    </style>
+
+    <script src="https://www.google.com/jsapi"></script>
+	<script src="/assets/v1503260787/js/coinsight.min.js"></script>
+	<script src="/assets/v1503260787/js/flairgame.min.js"></script>
+
+
+
+</head>
+
+
+<body>
+
+    <h1 class="header"><a href="/"><img src="/images/coinsight-web-logo.png" alt="Coinsight.org" id="logo" /></a></h1>
+    <div style="clear:both;"></div>
+
+<div class="ui-tabs ui-widget">
+<ul role="tablist" class="tabs-smaller ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header">
+
+    <li class="nav-dropdown ui-state-default ui-corner-top">
+        <a class="nav-inactive-link">Reddit</a>
+        <div class="nav-dropdown-content">    <a class="nav-dropdown-link" href="/flairgame">Flair Game</a><br>    <a class="nav-dropdown-link" href="/flaircounts">Flair Counts</a><br>    <a class="nav-dropdown-link" href="/subredditstats">Subreddit Stats</a><br>        </div>
+    </li>    <li class="nav-dropdown ui-state-default ui-corner-top">
+        <a class="nav-inactive-link">Depth Sums</a>
+        <div class="nav-dropdown-content">    <a class="nav-dropdown-link" href="/bitstamp">Bitstamp</a><br>    <a class="nav-dropdown-link" href="/gdax">GDAX</a><br>    <a class="nav-dropdown-link" href="/itbit">itBit</a><br>    <a class="nav-dropdown-link" href="/gemini">Gemini</a><br>    <a class="nav-dropdown-link" href="/bitfinex">Bitfinex</a><br>        </div>
+    </li>
+</ul>
+<div style="clear:both;"></div>
+<div id="content" class="graphs ui-tabs-panel ui-widget-content ui-corner-bottom">
+
+
+    <div id="reddit-user-box-init">
+        <table class="reddit-user-table" id="reddit-user-table">
+            <thead>
+                <tr class="reddit-user-table-header">
+                    <th>#</th>
+                    <th>Time</th>
+                    <th>Flair</th>
+                    <th>Balance</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="reddit-user-orders-init">
+        <table class="reddit-user-table" id="flair-orders-table">
+            <thead>
+                <tr class="reddit-user-table-header">
+                    <th>#</th>
+                    <th>Open Date</th>
+                    <th>Position</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="reddit-user-box">
+    </div>
+
+
+<div style="text-align:left; width:49.5%; float:left;">
+    <a href="http://reddit.com/r/BitcoinMarkets" style="margin-left:4px; font-size:16px; font-weight:bold;">/r/BitcoinMarkets Flair Game</a>
+    <span id="flair-game-help" style="height:20px; width:2.4em; float:right; margin-bottom:2px;">&nbsp;</span>
+</div>
+<div style="width:49.5%; float:right;">
+    <div class="flair-last-updated" style="text-align:right; float:right;">
+        Last updated: <span id="reddit-flairs-last-updated"></span>
+    </div>
+</div>
+<div style="clear:both;"></div>
+<div id="flair-game-explanation" style="display:none; text-align:left; padding:8px; padding-top: 1px; margin-bottom:10px; background-color:#eee; border-radius:10px; border-color:black; ">
+    <h3>reddit user flairs</h3>
+    On <a href="http://reddit.com">reddit</a>, users can set their "flair", a styled piece of text next to their name. For the /r/BitcoinMarkets community in particular, users set their flairs to Bullish or Bearish, depending on what their outlook is for Bitcoin. The goal of this sub-project is to determine whether the combined wisdom of these flairs can serve as a useful predictor for the price of a bitcoin. To encourage usage of the flair system, users are ranked below based on their performance in "the flair game."
+
+    <h3>the flair game</h3>
+    Rules and other information for the flair game can be found on <a href="http://www.reddit.com/r/BitcoinMarkets/wiki/flairgame">this /r/BitcoinMarkets wiki page.</a>
+</div>
+
+<div style="text-align:left; width:49.5%; float:left; height:250px; border-color:#d8e7f3; border-width:1px; border-style:solid; border-radius:3px; margin-bottom:16px;">
+    <div class="reddit-user-balance-default" id="reddit-user-balance">
+        <a href="https://coinsight.org/api/sso/reddit/authorize" id="flairgame-play">Play the flair game</a>
+        <br /><br />
+        <div style="font-size:12px; padding:4px;">
+            (You must have a reddit account to play.)
+        </div>
+    </div>
+</div>
+
+<div style="text-align:left; width:49.5%; float:right; border-color:#d8e7f3; border-width:1px; border-style:solid; border-radius:3px; margin-bottom:16px;">
+    <div id="reddit-flair-changes" style="overflow:auto; height:250px;"></div>
+</div>
+<div style="clear:both;"></div>
+
+<!-- Flair count pie chart !-->
+<div style="float:left; width:25%;">
+    <div id="chart_div" style=" margin:auto; display:inline-block;"></div>
+
+    <div style="text-align:center; font-weight:bold; font-size:18px;">
+        Bitstamp -
+        $<span id="bitstamp-price"></span>
+    </div>
+
+</div>
+
+<!-- Flair users table !-->
+<table class="flair-users-table" id="flair-users-table">
+    <thead>
+        <tr class="flair-users-header">
+            <th>#</th>
+            <th>Username</th>
+            <th>Flair</th>
+            <th>Last Change</th>
+            <th>Balance</th>
+            <th>Total Profit</th>
+            <th>Trade Frequency</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div style="clear:both;"></div>
+
+<script id="flair-userbox-template" type="x-tmpl-mustache">
+    <div style="padding:4px; margin-bottom:4px;">
+        <a style="float:right;" href="#" onclick="unset_reddit_flair_user(); return false;">Logout</a>
+        <div style="text-align:left; font-size:15px; font-weight:bold;">
+            <a style="font-size:15px; font-weight:bold;"
+               href="http://reddit.com/user/{{username_url}}">
+               {{username}}
+            </a>
+            <div class="{{user_css_classes}}">
+                {{{exchange_image}}} {{{position_text}}}
+            </div><br />
+        </div>
+        <div style="text-align:center;">
+            <span style="font-weight:bold; font-size:15px;">{{new_balance_str}}</span><br />
+        </div>
+    </div>
+    <div id="trader-tabs">
+        <ul id="trader-tabs-list">
+            <li><a href="#trader-tabs-trade">Trade</a></li>
+            <li><a href="#trader-tabs-orders" id="trader-tabs-orders-link">Orders</a></li>
+            <li><a href="#trader-tabs-history">History</a></li>
+            <li><a href="#trader-tabs-settings">Settings</a></li>
+        </ul>
+        <div id="trader-tabs-trade" style="text-align:center; padding-bottom:0px;">
+            <span style="font-weight:bold;">Instant Orders:</span><br />
+            {{{switch_text}}}
+            <div style="margin-top:10px;">
+            <span style="font-weight:bold;">Limit Orders:</span><br />
+            <table style="margin:auto;">
+            <tr><td style="text-align:right;">Set</td>
+            <td style="text-align:left;"><select id="trade-position" name="trade-position" style="width:120px;">
+                <option value="bull">Bullish</option>
+                <option value="bear">Bearish</option>
+                <option value="unset">Unset</option>
+            </select></td></tr>
+            <tr>
+                <td style="text-align:right;">
+                    when price ≥
+                </td>
+                <td style="text-align:left;">
+                    <input id="trade-limit-upper" name="trade-limit-upper" style="width:120px;"/>
+                    <button id="trade-limit-upper-button" name="trade-limit-upper-button">
+                        Set Limit
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">
+                    when price ≤
+                </td>
+                <td style="text-align:left;">
+                    <input id="trade-limit-lower" name="trade-limit-lower" style="width:120px;"/>
+                    <button id="trade-limit-lower-button" name="trade-limit-lower-button">
+                        Set Limit
+                    </button>
+                </td>
+            </tr>
+            </table>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="trader-tabs-orders" style="padding:0px !important;">
+            <div id="reddit-user-orders-box">
+                {{{orders_table_html}}}
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="trader-tabs-history" style="padding:0px !important;">
+            <div id="reddit-user-balance-box">
+                {{{trades_table_html}}}
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="trader-tabs-settings" style="text-align:center;">
+            <!--<span style="font-weight:bold;">Exchange:</span> {{{exchange_text}}}<br />-->
+        </div>
+    </div>
+</script>
+    <div style="clear:both;"> </div></div></div>
+
+    <div style="clear:both;"></div>
+    
+</html>
